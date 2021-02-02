@@ -1,0 +1,56 @@
+<div class="content-header">
+	{{currentStateDetails.label}} 
+</div>
+
+<div class="content">
+	<div class="box1">
+		<form ng-class="{submitted: pageInfo.submitted}" name="form" class="form-horizontal">
+			<div class="box-body">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Name</label>
+							<div class="col-md-8">
+								<input required name="title" ng-model="form_data.name" type="text" class="form-control"/>
+							</div>
+						</div>					
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Location</label>
+							<div class="col-md-8">
+								<input required name="Location" ng-model="form_data.location" type="text" class="form-control"/>
+							</div>
+						</div>					
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Content</label>
+							<div class="col-md-8">
+								<textarea required name="content" ng-model="form_data.content" class="form-control"></textarea>
+							</div>
+						</div>					
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-2">
+								<button ng-click="$event.preventDefault();save(form)"  type="Submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> Submit</button>
+								<button ui-sref="testimonals" type="Submit" class="btn btn-danger ext_mar_sm"><i class="fa fa-close"></i>Cancel</button>
+								
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>

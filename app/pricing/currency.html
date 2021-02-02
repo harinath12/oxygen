@@ -1,0 +1,143 @@
+							    	<div class="section" id="currency" style="display: block;">
+	                    				<h3 class="title" style="display: none;">Currency</h3>
+	                    <div class="row between">
+	                        <div class="six columns currency-calcs calc-wrapper" id="futures-currency-calc">
+	                            <h5 class="equity-head">Futures</h5>
+	                            <div class="row calc-inputs around">
+	                                <div class="four columns brokerage-calculator-input">
+	                                    <label>BUY</label>
+	                                    <input type="number" min="0" title="Buy Price" ng-model="pricing.currencyfuture.buy" ng-change="calcurrencyfuture()" ng-keyup="calcurrencyfuture()"  class="curr_fut curr_fut_bp" value="49.2525">
+	                                </div>
+	                                <div class="four columns brokerage-calculator-input">
+	                                    <label>SELL</label>
+	                                    <input type="number" min="0" title="Sell Price" ng-model="pricing.currencyfuture.sell" ng-change="calcurrencyfuture()" ng-keyup="calcurrencyfuture()" class="curr_fut curr_fut_sp" value="49.2725">
+	                                </div>
+	                                <div class="four columns brokerage-calculator-input">
+	                                    <label>Lot</label>
+	                                    <input type="number" min="0" title="Quantity" ng-model="pricing.currencyfuture.qty" ng-change="calcurrencyfuture()" ng-keyup="calcurrencyfuture()" class="curr_fut curr_fut_qty" value="1">
+	                                </div>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Turnover</label>
+	                                <span class="five columns" id="curr_fut_turn">{{pricing.currencyfuture.turnover | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list" ng-class="{strike: pricing.currencyfuture.actual_brokerage  >= 123}">
+				                                <label class="seven columns" >Brokerage(For Order)</label>
+				                                <span class="five columns" id="comm_fut_brokerage">{{pricing.currencyfuture.actual_brokerage | number:2}}</span>
+				                            </div>
+				                            <div class="row valuation-block equity-list" ng-class="{strike: pricing.currencyfuture.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+				                                <label class="seven columns">Brokerage(Per Day)</label>
+				                                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+				                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Exchange charge</label>
+	                                <span class="five columns" id="curr_fut_etc">{{pricing.currencyfuture.transaction_charge | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Clearing charge</label>
+	                                <span class="five columns" id="comm_fut_cc">{{pricing.currencyfuture.clearing_charge | number:2}}</span>
+	                            </div>	                            
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">GST</label>
+	                                <span class="five columns" id="curr_fut_st">{{pricing.currencyfuture.tax | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">SEBI charges</label>
+	                                <span class="five columns" id="sebi_curr_fut">{{pricing.currencyfuture.sebi | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Stamp duty</label>
+	                                <span class="five columns" id="stamp_duty_curr_fut">{{pricing.currencyfuture.stamp_charges | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Total tax and charges</label>
+	                                <span class="five columns" id="curr_fut_total">{{pricing.currencyfuture.total_charge | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Points to breakeven</label>
+	                                <span class="five columns" id="curr_fut_breakeven">{{pricing.currencyfuture.breakeven | number:2}}</span>
+	                            </div>
+	                            <!-- <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Pips to breakeven</label>
+	                                <span class="five columns" id="curr_fut_pips">16</span>
+	                            </div> -->
+	                            <div class="row net-profit" id="curr_fut_profit">
+	                                <label class="six columns">Net P&amp;L</label>
+	                                <span class="six columns profit neg" id="curr_fut_pnl">{{pricing.currencyfuture.profit_realized | number:2}}</span>
+	                            </div>                       
+	                        </div>
+	                        <div class="six columns currency-calcs calc-wrapper" id="options-currency-calc">
+	                            <h5 class="equity-head">Options</h5>
+	                            <div class="row calc-inputs around">
+	                                <div class="three columns brokerage-calculator-input">
+	                                    <label>Strike price</label>
+	                                    <input type="number" min="0" title="Strike Price" ng-model="pricing.currencyoption.strikeprice" ng-change="calcurrencyoption()" ng-keyup="calcurrencyoption()" class="curr_opt curr_opt_srp" value="60.75">
+	                                </div>
+	                                <div class="three columns brokerage-calculator-input">
+	                                    <label>Buy</label>
+	                                    <input type="number" min="0" title="Buy Premium" ng-model="pricing.currencyoption.buy" ng-change="calcurrencyoption()" ng-keyup="calcurrencyoption()" value="0.0625" class="curr_opt curr_opt_bp">
+	                                </div>
+	                                <div class="three columns brokerage-calculator-input">
+	                                    <label>Sell</label>
+	                                    <input type="number" min="0" title="Sell Premium" ng-model="pricing.currencyoption.sell" ng-change="calcurrencyoption()" ng-keyup="calcurrencyoption()" value="0.0675" class="curr_opt curr_opt_sp">
+	                                </div>
+	                                <div class="three columns brokerage-calculator-input">
+	                                    <label>Lot</label>
+	                                    <input type="number" min="0" title="Quantity" ng-model="pricing.currencyoption.qty" ng-change="calcurrencyoption()" ng-keyup="calcurrencyoption()" class="curr_opt curr_opt_qty">
+	                                </div>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">
+	                                    Turnover
+	                                    <!-- <span class="curr_opt_notional" title="Notional turnover: 121630.00">?</span> -->
+	                                </label>
+	                                <span class="five columns" id="curr_opt_turn">{{pricing.currencyoption.turnover}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list" ng-class="{strike: pricing.currencyoption.actual_brokerage  >= 123}">
+				                                <label class="seven columns" >Brokerage(For Order)</label>
+				                                <span class="five columns" id="comm_fut_brokerage">{{pricing.currencyoption.actual_brokerage | number:2}}</span>
+				                            </div>
+				                            <div class="row valuation-block equity-list" ng-class="{strike: pricing.currencyoption.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+				                                <label class="seven columns">Brokerage(Per Day)</label>
+				                                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+				                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Exchange charge</label>
+	                                <span class="five columns" id="curr_opt_etc">{{pricing.currencyoption.transaction_charge | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Clearing charge</label>
+	                                <span class="five columns" id="comm_fut_cc">{{pricing.currencyoption.clearing_charge | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">GST</label>
+	                                <span class="five columns" id="curr_opt_st">{{pricing.currencyoption.tax | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">SEBI charges</label>
+	                                <span class="five columns" id="sebi_curr_opt">{{pricing.currencyoption.sebi | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Stamp duty</label>
+	                                <span class="five columns" id="stamp_duty_curr_opt">{{pricing.currencyoption.stamp_charges | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Total tax and charges</label>
+	                                <span class="five columns" id="curr_opt_total">{{pricing.currencyoption.total_charge | number:2}}</span>
+	                            </div>
+	                            <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Points to breakeven</label>
+	                                <span class="five columns" id="curr_opt_breakeven">{{pricing.currencyoption.breakeven | number:2}}</span>
+	                            </div>
+	                            <!-- <div class="row valuation-block equity-list">
+	                                <label class="seven columns">Pips to breakeven</label>
+	                                <span class="five columns" id="curr_opt_pips">18</span>
+	                            </div> -->
+	                            <div class="row net-profit" id="curr_opt_profit">
+	                                <label class="six columns">Net P&amp;L</label>
+	                                <span class="six columns profit neg" id="curr_opt_pnl">{{pricing.currencyoption.profit_realized | number:2}}</span>
+	                            </div>                            
+	                        </div>
+	                    </div>                   
+	                </div>
+					

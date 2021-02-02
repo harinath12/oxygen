@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="indexController">
+<head>
+<title>Oxygen - Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- <link href="images/favicon.png" rel="shortcut icon" type="image/png"> -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="utf-8" http-equiv="encoding" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link ng-if="currentStateDetails.auth" href="css/style.css" rel="stylesheet" type="text/css" />
+<link ng-if="!currentStateDetails.auth" href="css/login-style.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="css/toast.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/select2.min.css">
+</head>	
+<body id="{{currentStateDetails.alt ? currentStateDetails.alt : currentStateDetails.name}}">
+
+	<ui-view ng-if="!currentStateDetails.auth" id='views'></ui-view>
+
+	<div ng-if="currentStateDetails.auth" class="wrapper">
+		
+		<div ng-include="'app/elements/header.html'"></div>
+
+		
+		<!--content-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="bottom-wrap">
+					
+		            <div ng-include="'app/elements/sidebar.html'"></div>
+					
+					<!--Right Content-->
+					<div class="content-wrap">
+						
+						
+						<ui-view id='views'></ui-view>
+						
+						<div ng-include="'app/elements/footer.html'"></div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		
+	</div>	<!-- wrapper -->
+
+	<script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	 
+	<script src="js/select2.min.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-ui-router.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-2.5.0.js"></script>
+	<script src="js/jquery.toast.js"></script>
+	<script src="https://cdn.ckeditor.com/4.5.3/full/ckeditor.js"></script>
+    <script src="https://rawgit.com/lemonde/angular-ckeditor/master/angular-ckeditor.js"></script>
+	<script src="app/app.config.js"></script>
+    <script src="app/shared/http.service.js"></script>
+    <script src="app/shared/api.service.js"></script>
+    <script src="app/index.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/blogs/blogs.controller.js"></script>
+    <script src="app/testimonials/testimonials.controller.js"></script>
+    <script src="app/products/products.controller.js"></script>
+    <script src="app/category/category.controller.js"></script>
+    <script src="app/pages/pages.controller.js"></script>
+    <script src="app/storelocator/store.controller.js"></script>
+
+</body>
+
+
+</html>

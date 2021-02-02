@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" ui-sref="home"><img src="assets/images/oxygen-logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span> 
+        </button>
+        <div class="collapse navbar-collapse justify-content-flex-end" id="mobile_nav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 float-md-right">
+        </ul>
+        <div class="menu-top d-none d-md-block">
+            <div class="waran" ><a data-toggle="modal" data-target="#warranty" class="cp">WARRANTY</a></div>
+            
+                <ul class="top-social col-md-12 ">
+                    <li><a href="https://www.facebook.com/" class="theme-color fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com/" class="theme-color fa fa-twitter"></a></li>
+                    <!--<li><a href="#" class="fa fa-instagram"></a></li> -->
+                    <li><a href="https://www.linkedin.com/in/" class="theme-color fa fa-linkedin"></a></li>
+                    <li><a href="" class="theme-color fa fa-google-plus"></a></li>
+                </ul>
+            
+        </div>
+        <ul class="navbar-nav navbar-light bt mt-60">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item dmenu dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+                <div class="dropdown-menu sm-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" ui-sref="about">About Oxygen</a>
+                    <a class="dropdown-item" ui-sref="founder">Our Founder & His Journey</a>
+                    <a class="dropdown-item" ui-sref="story">The Story Of Oxygen</a>
+                    <a class="dropdown-item" ui-sref="team">Our Team</a>
+                </div>
+              </li>
+            
+            <!--========-->
+            <li class="nav-item dropdown megamenu-li dmenu">
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cycles</a>
+                <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4 border-right mb-4">
+                            <h6>Kid's BiCycle</h6>
+                            <a class="dropdown-item" href="#"> Sun Spider</a>
+                            <a class="dropdown-item" href="#"> Rock Shock</a>
+                            <a class="dropdown-item" href="#"> Sun Spider</a>
+                            <a class="dropdown-item" href="#"> Rock Shock</a>
+                        </div>
+                       <div class="col-sm-6 col-lg-4 border-right mb-4">
+                            <h6>Hybrid Cycles</h6>
+                            <a class="dropdown-item" href="#"> Sun Spider</a>
+                            <a class="dropdown-item" href="#"> Rock Shock</a>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 border-right mb-4">
+                            <h6>Accessories</h6>
+                            <a class="dropdown-item" href="#"> Helmets</a>
+                            <a class="dropdown-item" href="#"> Gloves</a>
+                        </div>
+                        
+                    </div>
+                     
+                </div>
+            </li>
+            <!--=========-->
+            <li class="nav-item"><a class="nav-link" ui-sref="blogs">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref="pages({id:'contact-us'})">Reach Us</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref="store">Store Locator</a></li>
+   
+        </ul>
+        </div>
+    </div>
+</nav>

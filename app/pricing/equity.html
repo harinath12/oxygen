@@ -1,0 +1,273 @@
+
+	<div class="section" id="equities" style="display: block;">
+        <h3 class="title" style="display: none;">Equities - F&amp;O</h3>
+        <div class="row between">
+            <div class="brokerage-columns column equity-calcs calc-wrapper" id="intraday-equity-calc">
+                <h5 class="equity-head">Intraday equity</h5>
+                <div class="row calc-inputs around">
+                    <div class="four columns brokerage-calculator-input">
+                        <label>BUY</label>
+                        <input type="number" ng-model="pricing.intraday.buy" ng-change="calintra()" ng-keyup="calintra()" class="intra intra_bp" min="0" title="Sell Price" value="1100">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>SELL</label>
+                        <input type="number" ng-model="pricing.intraday.sell" ng-change="calintra()" ng-keyup="calintra()" min="0" title="Sell Price" value="1100"   class="intra intra_sp">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>QUANTITY</label>
+                        <input type="number" ng-model="pricing.intraday.qty" ng-change="calintra()" ng-keyup="calintra()" title="Quantity" value="400"  class="intra intra_qty">
+                    </div>
+                </div>
+                
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Turnover</label>
+                    <span class="five columns val" id="intra_turn">{{pricing.intraday.turnover}}</span>
+                </div>
+                
+                <div class="row valuation-block equity-list" ng-class="{strike: pricing.intraday.actual_brokerage  >= 123}">
+                <label class="seven columns" >Brokerage(For Order)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{pricing.intraday.actual_brokerage | number:2}}</span>
+            </div>
+            <div class="row valuation-block equity-list" ng-class="{strike: pricing.intraday.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+                <label class="seven columns">Brokerage(Per Day)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+            </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">STT total</label>
+                    <span class="five columns val" id="intra_stt">{{pricing.intraday.stt | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">Exchange charge</label>
+                    <span class="five columns val" id="intra_etc">{{pricing.intraday.transaction_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Clearing charge</label>
+                    <span class="five columns" id="comm_fut_cc">{{pricing.intraday.clearing_charge | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">GST</label>
+                    <span class="five columns val" id="intra_st">{{pricing.intraday.tax | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">SEBI charges</label>
+                    <span class="five columns val" id="sebi">{{pricing.intraday.sebi | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">Stamp duty</label>
+                    <span class="five columns val" id="stamp_duty">{{pricing.intraday.stamp_charges | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">Total tax and charges</label>
+                    <span class="five columns val" id="intra_total">{{pricing.intraday.total_charge | number:2}}</span>
+                </div>
+                <div class="row equity-list valuation-block equity-list">
+                    <label class="seven columns">Points to breakeven</label>
+                    <span class="five columns val" id="intra_breakeven">{{pricing.intraday.breakeven | number:2}}</span>
+                </div>
+                <div class="row net-profit" id="intra_profit">
+                    <label class="six columns">Net P&amp;L</label>
+                    <span class="six columns profit pos" id="intra_pnl">{{pricing.intraday.profit_realized | number:2}}</span>
+                </div>					                            
+            </div>
+            <div class="brokerage-columns column equity-calcs calc-wrapper" id="delivery-equity-calc">
+                <h5 class="equity-head">Delivery equity</h5>
+                <div class="row calc-inputs around">
+                    <div class="four columns brokerage-calculator-input">
+                        <label>BUY</label>
+                        <input type="number" ng-model="pricing.delivery.buy" ng-change="caldel()" ng-keyup="caldel()" class="delivery del_bp">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>SELL</label>
+                        <input type="number" ng-model="pricing.delivery.sell" ng-change="caldel()" ng-keyup="caldel()" class="delivery del_sp">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>QUANTITY</label>
+                        <input type="number" ng-model="pricing.delivery.qty" ng-change="caldel()" ng-keyup="caldel()" class="delivery del_qty">
+                    </div>
+                </div>
+                
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Turnover</label>
+                    <span class="five columns" id="del_turn">{{pricing.delivery.turnover}}</span>
+                </div>
+                <div class="row valuation-block equity-list" ng-class="{strike: pricing.delivery.actual_brokerage  >= 123}">
+                <label class="seven columns" >Brokerage(For Order)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{pricing.delivery.actual_brokerage | number:2}}</span>
+            </div>
+            <div class="row valuation-block equity-list" ng-class="{strike: pricing.delivery.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+                <label class="seven columns">Brokerage(Per Day)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+            </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">STT total</label>
+                    <span class="five columns" id="del_stt">{{pricing.delivery.stt | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Exchange charge</label>
+                    <span class="five columns" id="del_etc">{{pricing.delivery.transaction_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Clearing charge</label>
+                    <span class="five columns" id="comm_fut_cc">{{pricing.delivery.clearing_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">GST</label>
+                    <span class="five columns" id="del_st">{{pricing.delivery.tax | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">SEBI charges</label>
+                    <span class="five columns" id="sebi_delivery">{{pricing.delivery.sebi | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Stamp duty</label>
+                    <span class="five columns" id="stamp_duty_delivery">{{pricing.delivery.stamp_charges | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Total tax and charges</label>
+                    <span class="five columns" id="del_total">{{pricing.delivery.total_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Points to breakeven</label>
+                    <span class="five columns" id="del_breakeven">{{pricing.delivery.breakeven | number:2}}</span>
+                </div>
+                <div class="row net-profit" id="del_profit">
+                    <label class="six columns">Net P&amp;L</label>
+                    <span class="six columns profit pos" id="del_pnl">{{pricing.delivery.profit_realized | number:2}}</span>
+                </div>					                            
+            </div>
+            <div class="brokerage-columns column equity-calcs calc-wrapper" id="futures-equity-calc">
+                <h5 class="equity-head">F&amp;O - Futures</h5>
+                <div class="row calc-inputs around">
+                    <div class="four columns brokerage-calculator-input">
+                        <label>BUY</label>
+                        <input type="number" min="0" title="Buy Price" value="1000" ng-model="pricing.future.buy" ng-change="calfuture()" ng-keyup="calfuture()" class="fut_bp futures">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>SELL</label>
+                        <input type="number" min="0" title="Sell Price" value="1100" ng-model="pricing.future.sell" ng-change="calfuture()" ng-keyup="calfuture()" class="fut_sp futures">
+                    </div>
+                    <div class="four columns brokerage-calculator-input">
+                        <label>QUANTITY</label>
+                        <input type="number" min="0" title="Quantity" value="400" ng-model="pricing.future.qty" ng-change="calfuture()" ng-keyup="calfuture()" class="fut_qty futures">
+                    </div>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Turnover</label>
+                    <span class="five columns val" id="fut_turn">{{pricing.future.turnover}}</span>
+                </div>
+                <div class="row valuation-block equity-list" ng-class="{strike: pricing.future.actual_brokerage  >= 123}">
+                <label class="seven columns" >Brokerage(For Order)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{pricing.future.actual_brokerage | number:2}}</span>
+            </div>
+            <div class="row valuation-block equity-list" ng-class="{strike: pricing.future.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+                <label class="seven columns">Brokerage(Per Day)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+            </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">STT total</label>
+                    <span class="five columns val" id="fut_stt">{{pricing.future.stt | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Exchange charge</label>
+                    <span class="five columns val" id="fut_etc">{{pricing.future.transaction_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Clearing charge</label>
+                    <span class="five columns" id="comm_fut_cc">{{pricing.future.clearing_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">GST</label>
+                    <span class="five columns val" id="fut_st">{{pricing.future.tax | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">SEBI charges</label>
+                    <span class="five columns val" id="sebi_fut">{{pricing.future.sebi | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Stamp duty</label>
+                    <span class="five columns val" id="stamp_duty_fut">{{pricing.future.stamp_charges | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Total tax and charges</label>
+                    <span class="five columns val" id="fut_total">{{pricing.future.total_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Points to breakeven</label>
+                    <span class="five columns val" id="fut_breakeven">{{pricing.future.breakeven | number:2}}</span>
+                </div>
+                <div class="row net-profit" id="fut_profit">
+                    <label class="six columns">Net P&amp;L</label>
+                    <span class="six columns profit pos" id="fut_pnl">{{pricing.future.profit-realized | number:2}}</span>
+                </div>					                          
+            </div>
+            <div class="brokerage-columns column equity-calcs calc-wrapper optiondiv" id="options-equity-calc">
+                <h5 class="equity-head">F&amp;O - Options</h5>
+                <div class="row calc-inputs around">
+                	<div class="three columns brokerage-calculator-input">
+    <label>STRIKE PRICE</label>
+    <input type="number" min="0" title="Strike Price" ng-model="pricing.option.strikeprice" ng-change="caloption()" ng-keyup="calcomoption()" id="comm_opt_srp_input" class="comm-opt comm_opt_srp" value="400">
+</div>
+<div class="two columns brokerage-calculator-input">
+    <label>BUY</label>
+    <input type="number" min="0" title="Buy Premium" ng-model="pricing.option.buy" ng-change="caloption()" ng-keyup="calcomoption()" class="comm-opt comm_opt_bp" value="1">
+</div>
+<div class="two columns brokerage-calculator-input">
+    <label>SELL</label>
+    <input type="number" min="0" title="Sell Premium" ng-model="pricing.option.sell" ng-change="caloption()" ng-keyup="calcomoption()" class="comm-opt comm_opt_sp" value="2">
+</div>
+<div class="two columns brokerage-calculator-input">
+    <label>QUANTITY</label>
+    <input type="number" min="0" title="Quantity" ng-model="pricing.option.qty" ng-change="caloption()" ng-keyup="calcomoption()" class="comm-opt comm_opt_qty" value="1">
+</div>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Turnover</label>
+                    <span class="five columns" id="opt_turn">{{pricing.option.turnover}}</span>
+                </div>
+                <div class="row valuation-block equity-list" ng-class="{strike: pricing.option.actual_brokerage  >= 123}">
+                <label class="seven columns" >Brokerage(For Order)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{pricing.option.actual_brokerage | number:2}}</span>
+            </div>
+            <div class="row valuation-block equity-list" ng-class="{strike: pricing.option.actual_brokerage  < 123}" ng-hide="plan=='fixedplan'">
+                <label class="seven columns">Brokerage(Per Day)</label>
+                <span class="five columns" id="comm_fut_brokerage">{{123}}</span>				                                
+            </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">STT total</label>
+                    <span class="five columns" id="opt_stt">{{pricing.option.stt | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Exchange charge</label>
+                    <span class="five columns" id="opt_etc">{{pricing.option.transaction_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Clearing charge</label>
+                    <span class="five columns" id="comm_fut_cc">{{pricing.option.clearing_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">GST</label>
+                    <span class="five columns" id="opt_st">{{pricing.option.tax | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">SEBI charges</label>
+                    <span class="five columns" id="sebi_opt">{{pricing.option.sebi | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Stamp duty</label>
+                    <span class="five columns" id="stamp_duty_opt">{{pricing.option.stamp_charges | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Total tax and <br>charges</label>
+                    <span class="five columns" id="opt_total">{{pricing.option.total_charge | number:2}}</span>
+                </div>
+                <div class="row valuation-block equity-list">
+                    <label class="seven columns">Points to breakeven</label>
+                    <span class="five columns" id="opt_breakeven">{{pricing.option.breakeven | number:2}}</span>
+                </div>
+                <div class="row net-profit" id="opt_profit">
+                    <label class="six columns">Net P&amp;L</label>
+                    <span class="six columns profit pos" id="opt_pnl">{{pricing.option.profit_realized | number:2}}</span>
+                </div>					                          
+            </div>
+        </div>
+    </div>

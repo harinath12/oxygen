@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="indexController">
+<head>
+    <meta charset="UTF-8">
+    <title>Oxygen Cycles</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="	advisor, analytical, audit, broker, brokerage, business, company, consulting, currency, exchange, finance, financial, insurance, modern, trader">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/media.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/nivo-slider.css" />
+    <link rel="stylesheet" href="assets/css/lightbox.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.css"/>
+    <link rel="stylesheet" href="assets/css/aos.css"/>
+</head>
+<body>
+<div class="me-main-wraper">
+    <!-- main header -->
+    <div ng-include="'app/elements/header.html'"></div>
+    <!-- main header -->
+
+    <!-- banner -->
+    <ui-view></ui-view>
+    <!--Footer-->
+    <div ng-include="'app/elements/footer.html'"></div>
+
+               <!--Footer-->      
+</div>
+
+<div class="modal fade" id="warranty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        Warranty
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>        
+      </div>
+      <div class="modal-body">
+        <div class="pb-20">
+            <h2>Register your Bike with us</h2>
+            <ul class="list1">
+                <li>Just give us a miss call on 9529449449</li>
+                <li>You will get a text message, please click on the link provided in the text message.</li>
+                <li>This link will take you to our whatsapp chat.</li>
+                <li>Answer a few questions and you are done.</li>
+            </ul>
+        </div>
+        <div class="pb-20">
+            <h2>Benefit of Registration -</h2>
+            <ul class="list1">
+                <li>Get Warrenty certificate.</li>
+                <li>Regular cycling safety tips.</li>
+                <li>In future if u wish to Upgrade bike / get assured upgrade benefit.</li>
+                <li>Stay in touch with company directly for assured services by dealer. </li>
+                <li>We want to make sure you get good after sales support from our partner.</li>
+            </ul>
+            
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-ui-router.min.js"></script>
+<script src="assets/js/angular-animate.min.js"></script>
+<script src="assets/js/angular-touch.min.js"></script>
+<script src="assets/js/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/SmoothScroll.min.js"></script>
+<script src="assets/js/ui_range_slider.js"></script>
+<script src="assets/js/canvasjs.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/jquery-addons.js"></script>
+<script src="assets/js/fontawesome.js" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.nivo.slider.js"></script>
+<script type="text/javascript" src="assets/js/jquery.cslider.js"></script>
+<script type="text/javascript" src="assets/js/aos.js"></script>
+<script src="app/app.config.js"></script>
+<script src="app/shared/http.service.js"></script>
+<script src="app/shared/api.service.js"></script>
+<script src="app/index.controller.js"></script>
+<script src="app/home/home.controller.js"></script>
+<script src="app/pages/pages.controller.js"></script>
+<script src="app/products/products.controller.js"></script>
+<script src="app/pricing/pricing.controller.js"></script>
+<script src="app/about/about.controller.js"></script>
+<script src="app/blogs/blogs.controller.js"></script>
+<script src="app/store/store.controller.js"></script>
+</body>
+</html>

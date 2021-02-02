@@ -1,0 +1,184 @@
+<div class="content-header">
+	{{currentStateDetails.label}} 
+</div>
+
+<div class="content">
+	<div class="box1">
+		<form ng-class="{submitted: pageInfo.submitted}" name="form" class="form-horizontal">
+			<div class="box-body">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Title</label>
+							<div class="col-md-8">
+								<input required name="title" ng-model="form_data.title" type="text" class="form-control"/>
+							</div>
+						</div>					
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Brand Name</label>
+							<div class="col-md-8">
+								<input required name="brand" ng-model="form_data.brand" type="text" class="form-control"/>
+							</div>
+						</div>					
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Category</label>
+							<div class="col-md-8">
+								<select required name="category" ng-model="form_data.category" class="form-control">
+									<option>Select Category</option>
+									<option ng-repeat="cat in category" value="{{cat.id}}" ng-if="cat.status == 1">{{cat.name}}</option>
+								</select>
+							</div>
+						</div>					
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Upload File</label>
+							<div class="col-md-8">
+								<div class="browse">
+									<input file-upload type="file" class="hide_file form-control" name="file" ng-model="form_data.thump_file" multiple="" />
+									<div class="show_file row">
+										<div class="col-xs-8 no_pad">
+											<input type="text" id="file_name2" placeholder="Choose File.." class="form-control"/>
+										</div>
+										<div class="col-xs-4 ext_padt_xs">
+											<a class="btn-browse">Browse</a>
+										</div>
+									</div>
+								</div>
+								<div ng-if="form_data.thump_file && form_data.thump_file == 'Loading'">
+									<img src="images/200.gif">
+								</div>
+								<div class="image_gallery" ng-if="form_data.thump_file && form_data.thump_file != 'Loading'">
+									<span ng-repeat="file in form_data.thump_file.split(',') track by $index">
+										<label width="100">{{file}}</label>
+										<i ng-click="deleteimage($index)" class="fa fa-trash"></i>
+									</span>
+								</div>
+								<style type="text/css">
+									.image_gallery{
+										margin-top: 20px;
+									}
+									.image_gallery span{
+										display: inline-block;
+										width: 100px;
+										height: 100px;
+										padding: 10px;
+										position: relative;
+										border: 1px solid #f2f2f2;
+										margin: 10px;
+										vertical-align: top;
+									}
+									.image_gallery span label{
+										max-width: 100%;
+										max-height: 100%;
+										word-break: break-all;
+									}
+									.image_gallery span i{
+										position: absolute;
+									    top: -5px;
+									    right: -5px;
+									    cursor: pointer;
+									    color: red;
+									    width: 20px;
+									    height: 20px;
+									    display: inline-block;
+									    background: #f2f2f2;
+									    border-radius: 50%;
+									    padding: 2px;
+									    text-align: center;
+									}
+								</style>
+							</div>
+						</div>					
+					</div>
+				</div>	
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Upload File</label>
+							<div class="col-md-8">
+								<div class="browse">
+									<input file-upload type="file" class="hide_file form-control" name="file" ng-model="form_data.file" multiple="" />
+									<div class="show_file row">
+										<div class="col-xs-8 no_pad">
+											<input type="text" id="file_name1" placeholder="Choose File.." class="form-control"/>
+										</div>
+										<div class="col-xs-4 ext_padt_xs">
+											<a class="btn-browse">Browse</a>
+										</div>
+									</div>
+								</div>
+								<div ng-if="form_data.file && form_data.file == 'Loading'">
+									<img src="images/200.gif">
+								</div>
+								<div class="image_gallery" ng-if="form_data.file && form_data.file != 'Loading'">
+									<span ng-repeat="file in form_data.file.split(',') track by $index">
+										<label width="100">{{file}}</label>
+										<i ng-click="deleteimage($index)" class="fa fa-trash"></i>
+									</span>
+								</div>
+								<style type="text/css">
+									.image_gallery{
+										margin-top: 20px;
+									}
+									.image_gallery span{
+										display: inline-block;
+										width: 100px;
+										height: 100px;
+										padding: 10px;
+										position: relative;
+										border: 1px solid #f2f2f2;
+										margin: 10px;
+										vertical-align: top;
+									}
+									.image_gallery span label{
+										max-width: 100%;
+										max-height: 100%;
+										word-break: break-all;
+									}
+									.image_gallery span i{
+										position: absolute;
+									    top: -5px;
+									    right: -5px;
+									    cursor: pointer;
+									    color: red;
+									    width: 20px;
+									    height: 20px;
+									    display: inline-block;
+									    background: #f2f2f2;
+									    border-radius: 50%;
+									    padding: 2px;
+									    text-align: center;
+									}
+								</style>
+							</div>
+						</div>					
+					</div>
+				</div>				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-2">
+								<button ng-click="$event.preventDefault();save(form)"  type="Submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> Submit</button>
+								<button ui-sref="products" type="Submit" class="btn btn-danger ext_mar_sm"><i class="fa fa-close"></i>Cancel</button>
+								
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>

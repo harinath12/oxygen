@@ -1,0 +1,585 @@
+	/* ---- Responsive ---- */
+@media (min-width: 1439px) and (max-width: 1920px) {
+  
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+
+  	
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.newsletter a{
+		right: 180px;
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.newsletter a{
+		right: 100px;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.foot-social{
+		margin-bottom: 20px
+	}
+	.foot-social li{
+		display: inline-block;
+		margin-right: 10px
+	}
+	footer .top-social {
+	    padding: 10px;
+	    text-align: center;
+	}
+	.md-mb-20{
+		margin-bottom: 20px
+	}
+	.md-mb-30{
+		margin-bottom: 30px
+	}
+	.md-mt-20{
+		margin-top: 20px
+	}
+	.md-mt-70{
+		margin-top: 70px
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: auto;
+	    height: auto;
+	}
+	.sub-area{
+		background-color: #d02d32;
+    	margin: auto;
+    	padding: 25px; 
+	    text-align: center;
+	    height: auto;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	.newsletter input[type=email]{
+		width: 70%;
+	}
+	.newsletter a{
+		right: 80px;
+	}
+	.d-md-block {
+	    display: none!important;
+	}
+	.newsletter .col-md-8{
+		width: 100%;
+		flex: 0 0 100%;
+	}
+	.foot-top{
+		background-size: auto;
+		padding: 0!important;
+	}
+}
+
+
+
+/* #Media
+================================================== */
+
+@media (max-width: 767px) { 
+
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}
+
+    h1{
+        font-size: 38px;
+    }
+    
+    
+	.nivo-controlNav, .nivo-directionNav{
+		display: none;
+	}
+	.caption-wrap{
+		width: 75%;
+		padding: 20px 10px;
+	}
+	.caption-wrap h1{
+		font-size: 1.8rem;
+		line-height: 25px;
+	}
+  	.main-panel {
+		margin-left: 0;
+		width: 100%; 
+    }
+    .testi-carousel .owl-nav .owl-next {
+		right: -40px;
+	}
+	.testi-carousel .owl-nav .owl-prev {
+		left: -40px;
+	}
+	.blog-box{
+		margin-bottom:20px
+	}
+	.main-content.blog-pg, .main-content.blogdt-pg{
+		padding-top: 60px !important;
+	}
+    .foot-info, .foot-nav, .foot-social{
+		margin-bottom: 25px
+	}
+	.foot-social li{
+		display: inline-block;
+		margin-right: 10px
+	}
+	.foot-nav{
+		width: 47%!important;
+		margin-bottom: 20px
+	}
+	.copyright p{
+		display: block;
+		text-align: center;
+		padding: 5px;
+	}
+	.copyright p:last-of-type{
+		float: none;
+	}
+	
+	.sm-mb-20{
+		margin-bottom: 20px
+	}
+	.sm-mb-30{
+		margin-bottom: 30px
+	}
+	.sm-pl-0{
+		padding-left: 0px;
+	}
+	.sm-mt-70{
+		margin-top: 70px
+	}
+	.sm-mt-20{
+		margin-top: 20px
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+	.sub-area{
+		background-color: #d02d32;
+    	margin: auto;
+    	padding: 25px; 
+	    text-align: center;
+	    height: auto;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	.newsletter input[type=email]{
+		width: 70%;
+	}
+	.newsletter a{
+		right: 100px;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: auto;
+	    height: auto;
+	}
+	
+
+}
+
+
+
+@media (max-width: 575px) {
+	.foot-top{
+		padding: 0!important;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+	.newsletter a{
+		right: 80px;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}
+	
+	.new-arrival .imagebox-wrap {
+	    width: 270px;
+	    height: 270px;
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.navbar-nav{
+	    line-height: 2em;
+	    margin-top: 0!important;
+	}
+	.navbar {
+	    padding: 10px;
+	}
+	.testimonial {
+	    padding: 20px 0px;
+	}
+	
+	.sub-area{
+		background-color: #d02d32;
+		height: auto; 
+	    padding: 0px;
+	    text-align: center;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: auto;
+	    height: auto;
+	}
+
+
+}
+
+@media (max-width: 480px) {
+	.new-arrival .imagebox-wrap {
+	    width: auto;
+	    height: auto;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}
+	.new-arrival .imagebox{
+		height: 210px;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: 270px;
+	    height: 270px;
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.page-banner{
+		min-height: 180px;
+		background-position: -125px;
+	}
+	.navbar-nav{
+	    line-height: 2em;
+	    margin-top: 0!important;
+	}
+	.navbar {
+	    padding: 10px;
+	}
+	.testi-carousel .owl-controls{
+		display: none!important;
+	}
+	.newsletter a{
+		right: 15px;
+	}
+	.sub-area{
+		background-color: #d02d32;
+		height: auto; 
+	    padding: 0px;
+	    text-align: center;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	
+}
+
+
+@media (max-width: 414px) {
+	.foot-top{
+		padding: 0!important;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: auto;
+	    height: auto;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}
+	.new-arrival .imagebox{
+		height: 210px;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: 270px;
+	    height: 270px;
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.carousel-caption{
+		position: unset;
+	}
+	.page-banner{
+		min-height: 180px;
+		background-position: -125px;
+	}
+	.navbar-nav{
+	    line-height: 2em;
+	    margin-top: 0!important;
+	}
+	.me-heading2 p{
+		text-align: justify;
+	}
+	
+	.me-heading2 {
+	    padding: 40px 15px;
+	}
+	.navbar {
+	    padding: 10px;
+	}
+	.newsletter a{
+		right: 15px;
+	}
+	.sub-area{
+		background-color: #d02d32;
+		height: auto; 
+	    padding: 0px; 
+	    text-align: center;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+
+}
+
+
+
+@media (max-width: 375px) {
+	.foot-top{
+		padding: 0!important;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}
+	.new-arrival .imagebox{
+		height: 210px;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: 270px;
+	    height: 270px;
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.carousel-caption{
+		position: unset;
+	}
+	.navbar-nav{
+	    line-height: 2em;
+	    margin-top: 0!important;
+	}
+	.page-banner{
+		min-height: 180px;
+		background-position: -125px;
+	}
+	.pricing .nav-item::before{
+		background-color: unset;
+	}
+	.pricing{
+	    padding: 20px;
+	}
+	.navbar {
+	    padding: 10px;
+	}
+
+	.foot-top h5{
+		margin:15px 0 0;
+	}
+	.foot-nav:last-of-type {
+	    padding-left: 0;
+	    vertical-align: top;
+	}
+	.me-heading2 p{
+		text-align: justify;
+	}
+	.app-img img {
+	    margin: 0;
+	}
+	.me-heading2 {
+	    padding: 40px 15px;
+	}
+	.newsletter a{
+		right: 15px;
+	}
+	.sub-area{
+		background-color: #d02d32;
+		height: auto; 
+	    padding: 0px; 
+	    text-align: center;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative;
+	     min-height: auto;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+
+}
+
+
+@media (max-width: 320px) {
+	.foot-top{
+		padding: 0!important;
+	}
+	.menu-top{
+		display: none!important;
+	}
+	.why-buy{
+		background-size: auto;
+	}
+	.why-oxy-bg{
+		margin-bottom: 20px;
+	}
+	.why-content {
+	    padding: 0;
+	}
+	.contact-info-box{
+		margin-left: 0;
+	}	.new-arrival .imagebox{
+		height: 210px;
+	}
+	.new-arrival .imagebox-wrap {
+	    width: 270px;
+	    height: 270px;
+	}
+	.navbar-nav{
+	    line-height: 2em;
+	    margin-top: 0!important;
+	}
+	.page-banner{
+		min-height: 180px;
+		background-position: -125px;
+	}
+	.navbar {
+	    padding: 10px;
+	}
+	.foot-top h5{
+		margin:150px 0 0;
+	}
+	.bt{
+	    border-top: none;
+	    margin-left: 0;
+	}
+	.newsletter a{
+		right: 15px;
+	}
+	.sub-area{
+		background-color: #d02d32;
+		height: auto; 
+	    padding: 0px; 
+	    text-align: center;
+	}
+	.newsletter {
+	     background: none; 
+	     margin-top: 0px; 
+	     position: relative; 
+	     min-height: auto;
+	}
+	.new-arrival .image-carousel{
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 800px){
+
+}
+
+@media only screen and (max-width: 1150px){
+
+}

@@ -1,0 +1,93 @@
+<div class="content-header">
+	{{currentStateDetails.label}} 
+</div>
+
+<div class="content">
+	<div class="box1">
+		<form ng-class="{submitted: pageInfo.submitted}" name="form" class="form-horizontal">
+			<div class="box-body">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Title</label>
+							<div class="col-md-8">
+								<input required name="title" ng-model="form_data.title" type="text" class="form-control"/>
+							</div>
+						</div>					
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Short Description</label>
+							<div class="col-md-8">
+								<textarea ckeditor="ckeditorOptions" required name="content" ng-model="form_data.short_content" class="form-control"></textarea>
+							</div>
+						</div>					
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Description</label>
+							<div class="col-md-8">
+								<textarea ckeditor="ckeditorOptions" required name="content" ng-model="form_data.content" class="form-control"></textarea>
+							</div>
+						</div>					
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Upload File</label>
+							<div class="col-md-8">
+								<div class="browse">
+									<input file-upload type="file" class="hide_file form-control" name="image" ng-model="form_data.image"/>
+									<div class="show_file row">
+										<div class="col-xs-8 no_pad">
+											<input type="text" id="file_name1" placeholder="Choose File.." class="form-control"/>
+										</div>
+										<div class="col-xs-4 ext_padt_xs">
+											<a class="btn-browse">Browse</a>
+										</div>
+									</div>
+								</div>
+								<div ng-if="form_data.image">
+									<img width="100" src="api/uploads/{{form_data.image}}">
+								</div>
+							</div>
+						</div>					
+					</div>
+				</div>
+				<!-- <div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="control-label col-md-2">Date</label>
+							<div class="col-md-5">
+								<div class="input-group date">
+									<input date-picker type="text" class="form-control pull-left Datepic">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+								</div>
+							</div>
+						</div>					
+					</div>
+				</div> -->
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<div class="col-md-8 col-md-offset-2">
+								<button ng-click="$event.preventDefault();save(form)"  type="Submit" class="btn btn-success"><i class="fa fa-paper-plane"></i> Submit</button>
+								<button ui-sref="blogs" type="Submit" class="btn btn-danger ext_mar_sm"><i class="fa fa-close"></i>Cancel</button>
+								
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>
