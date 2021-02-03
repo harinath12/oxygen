@@ -37,7 +37,7 @@
                     <div class="row">
                         <div ng-repeat="cat in CategoryAndProducts" class="col-sm-6 col-lg-4 border-right mb-4">
                             <h6>{{cat.name}}</h6>
-                            <a ui-sref="product({id:product.id})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.title}}</a>
+                            <a ui-sref="product({id:product.id})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.brand}}</a>
                         </div>
                     </div>
                      

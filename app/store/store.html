@@ -14,8 +14,20 @@
 	
 	<!--Content Start-->
 	<div class="main-content product-pg bg-1 mt-40 mb-40">
-		<div class="container">    
-            <input type="text" ng-model="search.$" name="">
+		<div class="container">  
+        <div class="row">
+            <div class="col-md-8 clear-fix"></div>
+            <div class="col-md-4 col-md-offset-3">
+                <form action="" class="search-form">
+                    <div class="form-group has-feedback">
+                        <label for="search" class="sr-only">Search By Pincode</label>
+                        <input type="search" class="form-control" name="search" id="search" ng-model="search.$" placeholder="search">
+                        <span class="fas fa-search form-control-feedback"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+            
             <div class="row">
                 <div class="col-md-4 col-sm-6 text-center" ng-repeat="store in stores | filter:search">
                     <h3 class="theme-color">{{store.name}}</h3>
