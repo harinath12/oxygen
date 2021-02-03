@@ -35,24 +35,10 @@
                 <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cycles</a>
                 <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-4 border-right mb-4">
-                            <h6>Kid's BiCycle</h6>
-                            <a class="dropdown-item" href="#"> Sun Spider</a>
-                            <a class="dropdown-item" href="#"> Rock Shock</a>
-                            <a class="dropdown-item" href="#"> Sun Spider</a>
-                            <a class="dropdown-item" href="#"> Rock Shock</a>
+                        <div ng-repeat="cat in CategoryAndProducts" class="col-sm-6 col-lg-4 border-right mb-4">
+                            <h6>{{cat.name}}</h6>
+                            <a ui-sref="product({id:product.id})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.title}}</a>
                         </div>
-                       <div class="col-sm-6 col-lg-4 border-right mb-4">
-                            <h6>Hybrid Cycles</h6>
-                            <a class="dropdown-item" href="#"> Sun Spider</a>
-                            <a class="dropdown-item" href="#"> Rock Shock</a>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 border-right mb-4">
-                            <h6>Accessories</h6>
-                            <a class="dropdown-item" href="#"> Helmets</a>
-                            <a class="dropdown-item" href="#"> Gloves</a>
-                        </div>
-                        
                     </div>
                      
                 </div>

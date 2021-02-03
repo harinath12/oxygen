@@ -15,6 +15,12 @@ function indexController($rootScope, $scope, $state, ApiService, $window, $timeo
     $rootScope.stateparams ={};
     $rootScope.currentState = $state.current.name;
     $rootScope.currentStateDetails = $state.current;
+
+    $rootScope.CategoryAndProducts = {};
+    ApiService.getCategoryAndProducts().then(function(res){
+        $rootScope.CategoryAndProducts = res.data;
+    });
+
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){ 
         $rootScope.currentState = toState.name;
         $rootScope.currentStateDetails = toState;

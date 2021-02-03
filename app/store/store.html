@@ -15,8 +15,9 @@
 	<!--Content Start-->
 	<div class="main-content product-pg bg-1 mt-40 mb-40">
 		<div class="container">    
+            <input type="text" ng-model="search.$" name="">
             <div class="row">
-                <div class="col-md-4 col-sm-6 text-center" ng-repeat="store in stores">
+                <div class="col-md-4 col-sm-6 text-center" ng-repeat="store in stores | filter:search">
                     <h3 class="theme-color">{{store.name}}</h3>
                     <p>{{store.address}}</p>
                     <p>{{store.pincode}}</p>

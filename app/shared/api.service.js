@@ -196,6 +196,12 @@ hmapp.factory('ApiService', function (httpService, $q, APIURL, $rootScope) {
         });
     }
 
+    apiService.getCategoryAndProducts = function(){
+        return httpService.get(APIURL+'hm_get_category_and_products')
+        .then(function (res) {
+            return res['data'];
+        });
+    }
     
     return apiService;
 });

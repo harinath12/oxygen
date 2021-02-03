@@ -37,3 +37,17 @@ function hm_getblog(){
 	return array('status' => 'Success', 'data' => $response);
 
 }
+
+
+function hm_get_category_and_products(){
+	$response = get_results('select * from category');
+
+	$new_array = array();
+
+	foreach ($response as $key => $value) {
+		$value['products'] = get_results('select * from products where category = '.$value['id']);
+		$new_array[] = $value;
+	}
+
+	return array('status' => 'Success', 'data' => $new_array);
+}

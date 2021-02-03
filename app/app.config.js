@@ -1,6 +1,6 @@
 var hmapp = angular.module('app', 
     ['ui.router', 'ui.bootstrap', 'ngAnimate', ])
-.value('APIURL', 'http://localhost/cortex/oxygen/admin/api/?action=');
+.value('APIURL', 'http://localhost/Hari/oxygen/admin/api/?action=');
 /*.value('APIURL', '/oxygen/admin/api/?action=');*/
 hmapp
 .config(routes);
