@@ -161,6 +161,12 @@ a:hover, a:focus, a:active { outline: none!important; text-decoration: none; col
 .shop-content .btn-read:hover {
     color: #fff;
 }
+.why-content .btn-why-read{
+    color: #fff;
+}
+.why-content .btn-why-read:hover{
+    color: #192330;
+}
 .why-content .btn-why-read:hover:before {
     width: 0;
 }
@@ -1025,7 +1031,6 @@ input[type=email], input[type=number], input[type=text], input[type=tel], input[
     border-radius: 2px;
     box-shadow: none;
     box-sizing: border-box;
-    margin-bottom: 20px;
 }
 .uib-tab.nav-item.active{
     border-bottom: 2px solid;
