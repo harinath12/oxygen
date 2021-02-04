@@ -71,7 +71,7 @@ ul {
 }
 a { outline: 0; transition: all 0.5s; color: #000; }
 a:link, a:visited { text-decoration: none; }
-a:hover, a:focus, a:active { outline: none!important; text-decoration: none; color: unset; }
+a:hover, a:focus, a:active { outline: none!important; text-decoration: none; }
 
 .theme-color{
     color: #d02d32;
@@ -1333,4 +1333,11 @@ input[type=email], input[type=number], input[type=text], input[type=tel], input[
 }
 .search-form  .form-control{
     padding: 5px 30px!important;
+}
+.home_page footer{
+    margin-top: 0!important;
+}
+.store-box{
+    box-shadow: 0 0 5px 0 #ccc;
+    padding: 10px;
 }

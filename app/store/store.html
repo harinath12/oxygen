@@ -29,10 +29,13 @@
         </div>
             
             <div class="row">
-                <div class="col-md-4 col-sm-6 text-center" ng-repeat="store in stores | filter:search">
-                    <h3 class="theme-color">{{store.name}}</h3>
-                    <p>{{store.address}}</p>
-                    <p>{{store.pincode}}</p>
+                <div class="col-md-4 col-sm-6 text-center " ng-repeat="store in stores | filter:search">
+                    <div class="store-box">
+                        <h3 class="theme-color">{{store.name}}</h3>
+                        <p>{{store.address}}</p>
+                        <p>{{store.pincode}}</p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
