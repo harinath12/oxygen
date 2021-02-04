@@ -5,7 +5,6 @@
 /*-------------------------------------
 [ 1. theme default CSS ]
 ---------------------------------------*/
-html, body {height: 100%;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -15,20 +14,13 @@ a:focus {outline:0px solid}
 img {max-width:100%;}
 .fix {overflow:hidden}
 p {margin:0px;}
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 10px;
-    font-family: 'Roboto', sans-serif;
-    font-weight:600;
-}
-h1,h4{text-transform:uppercase;}
-h4{color:#1b1b1b;}
+
 a {
     transition: all 0.3s ease 0s;
     text-decoration:none;
     font-weight:400;
     color:#555;
     text-transform:uppercase;
-    font-family: 'Montserrat', sans-serif;
 }
 a:hover,a:hover, a:focus {
     color: #fe5858;
@@ -43,10 +35,6 @@ button:focus,a:focus {
     outline-color: -webkit-focus-ring-color;
     outline-style: auto;
     outline-width: 0px;
-}
-a:active, a:hover {
-    outline: 0 none;
-    text-decoration:none;
 }
 .shop-menu .right p {
     float: right;
