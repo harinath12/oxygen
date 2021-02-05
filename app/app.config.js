@@ -1,6 +1,6 @@
 var hmapp = angular.module('app', 
     ['ui.router', 'ui.bootstrap', 'ngAnimate', ])
-.value('APIURL', 'http://localhost/cortex/oxygen/admin/api/?action=');
+.value('APIURL', 'http://localhost/Hari/oxygen/admin/api/?action=');
 /*.value('APIURL', '/oxygen/admin/api/?action=');*/
 hmapp
 .config(routes);
@@ -139,7 +139,26 @@ function routes($stateProvider, $urlRouterProvider) {
             url: '/products',
             templateUrl: 'app/products/products.html',
             controller: 'productsController',
-            
+        },
+        {
+            name: 'category_products',
+            label: 'Products',
+            base: 'products',
+            auth: false,
+            restricted:false,
+            url: '/products/:id',
+            templateUrl: 'app/products/products.html',
+            controller: 'productsController',
+        },
+        {
+            name: 'brand_products',
+            label: 'Products',
+            base: 'products',
+            auth: false,
+            restricted:false,
+            url: '/products/:id/:id2',
+            templateUrl: 'app/products/products.html',
+            controller: 'productsController',
         },
         {
             name: 'store',

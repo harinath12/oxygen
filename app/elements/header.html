@@ -32,12 +32,12 @@
             
             <!--========-->
             <li class="nav-item dropdown megamenu-li dmenu">
-                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cycles</a>
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" ui-sref="products" aria-expanded="false">Cycles</a>
                 <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                     <div class="row">
                         <div ng-repeat="cat in CategoryAndProducts" class="col-sm-6 col-lg-4 border-right mb-4">
-                            <h6>{{cat.name}}</h6>
-                            <a ui-sref="product({id:product.id})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.brand}}</a>
+                            <h6 ui-sref="category_products({id:cat.id})">{{cat.name}}</h6>
+                            <a ui-sref="brand_products({id:cat.id, id2:product.brand})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.brand}}</a>
                         </div>
                     </div>
                      

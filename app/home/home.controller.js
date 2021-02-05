@@ -6,6 +6,11 @@ function homeController  ($rootScope, $scope, $state, ApiService, $window, $time
 
     $scope.home_data = {};
 
+    $scope.recent_products = [];
+    
+    ApiService.hm_get_recent_products().then(function(res){
+        $scope.recent_products = res.data;
+    });
 
     ApiService.videos().then(function(res){
         $scope.home_data = res.data;

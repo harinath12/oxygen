@@ -202,6 +202,20 @@ hmapp.factory('ApiService', function (httpService, $q, APIURL, $rootScope) {
             return res['data'];
         });
     }
+
+    apiService.getAllProducts = function(){
+        return httpService.get(APIURL+'hm_get_all_products')
+        .then(function (res) {
+            return res['data'];
+        });
+    }
+
+    apiService.hm_get_recent_products = function(){
+        return httpService.get(APIURL+'hm_get_recent_products')
+        .then(function (res) {
+            return res['data'];
+        });
+    }
     
     return apiService;
 });

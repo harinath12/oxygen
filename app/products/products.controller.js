@@ -4,23 +4,25 @@ productsController.$inject = [ '$stateParams','$rootScope', '$scope', '$state', 
 
 function productsController  ($stateParams, $rootScope, $scope, $state, ApiService, $window, $timeout, $interval) {
 
-
-	/*ApiService.category().then(function(res){
-        $scope.category = res.data;
+    $scope.pageInfo = {filter: {category: '', brand: ''}, orderby: 'title'};
+    $scope.products = [];
+    
+	ApiService.getAllProducts().then(function(res){
+        $scope.products = res.data;
     });
 
-	$scope.product_cat= {};
-	$scope.id = $stateParams.id;
-    ApiService.resources().then(function(res){
-        $scope.resources = res.data;
-        res.data.forEach(function(v){
-        	if($scope.resource_cat[v.category] === undefined) {
-        		$scope.resource_cat[v.category] = [];
-        	}
 
-            $scope.resource_cat[v.category].push(v);
-	        
-	    });
-    });*/
+	if ($stateParams.id) {
+        $scope.pageInfo.filter.category = $stateParams.id;
 
+        var filter = $rootScope.CategoryAndProducts.filter(a => a.id == $stateParams.id);
+
+        if (filter.length) {
+            $scope.pageInfo.category = filter[0];
+        }
+    }
+
+    if ($stateParams.id2) {
+        $scope.pageInfo.filter.brand = $stateParams.id2;
+    }
 }
