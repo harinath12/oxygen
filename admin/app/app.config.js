@@ -153,6 +153,16 @@ function routes($stateProvider, $urlRouterProvider) {
             controller: 'categoryController'
         },
         {
+            name: 'brand',
+            label: 'Brand',
+            base: 'brand',
+            auth: true,
+            restricted:false,
+            url: '/brand',
+            templateUrl: 'app/brand/brand.html',
+            controller: 'brandController'
+        },
+        {
             name: 'pages',
             label: 'Pages',
             auth: true,

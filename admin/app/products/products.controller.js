@@ -33,7 +33,12 @@ function productsController($scope, $state, $rootScope, APIURL, $http, ApiServic
                 $scope.category[v.id] = v;
             });
         });
-    
+    $scope.brand = {};
+    ApiService.hm_brand().then(function(res){
+            res.data.forEach(function(v){
+                $scope.brand[v.id] = v;
+            });
+        });
     $scope.deleteimage = function(ind){
         var imgs = $scope.form_data.file.split(',');
         imgs.splice(ind, 1);

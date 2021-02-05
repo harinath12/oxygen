@@ -286,6 +286,33 @@ hmapp.factory('ApiService', function (httpService, $q, APIURL, $rootScope) {
         });
     }
 
+    apiService.hm_brand = function(){
+        return httpService.get(APIURL+'hm_brand')
+        .then(function (res) {
+            return res['data'];
+        });
+    }
+
+    apiService.hm_save_brand = function(data){
+        return httpService.post(APIURL+'hm_save_brand', data)
+        .then(function (res) {
+            return res['data'];
+        });
+    }
+
+    apiService.hm_delete_brand = function(id){
+        return httpService.post(APIURL+'hm_delete_brand', {delete:[id]})
+        .then(function (res) {
+            return res['data'];
+        });
+    }
+
+    apiService.hm_change_brand_status = function(st, id){
+        return httpService.post(APIURL+'hm_change_brand_status', {status: st, id:id})
+        .then(function (res) {
+            return res['data'];
+        });
+    }
    
     
     apiService.hm_pages = function(){

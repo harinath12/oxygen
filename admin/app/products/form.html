@@ -21,7 +21,10 @@
 						<div class="form-group">
 							<label class="control-label col-md-2">Brand Name</label>
 							<div class="col-md-8">
-								<input required name="brand" ng-model="form_data.brand" type="text" class="form-control"/>
+								<select required name="brand" ng-model="form_data.brand" class="form-control">
+									<option>Select Brand</option>
+									<option ng-repeat="brand in brand" value="{{brand.id}}" ng-if="brand.status == 1">{{brand.name}}</option>
+								</select>
 							</div>
 						</div>					
 					</div>
