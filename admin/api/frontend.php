@@ -40,14 +40,26 @@ function hm_getblog(){
 
 
 function hm_get_category_and_products(){
-	$response = get_results('select * from category');
+	$response = get_results('select * from category where status = 1');
 
 	$new_array = array();
 
 	foreach ($response as $key => $value) {
-		$value['products'] = get_results('select * from products where category = '.$value['id']);
+		$value['products'] = get_results('select * from products where status = 1 and category = '.$value['id'].' group by brand');
 		$new_array[] = $value;
 	}
 
 	return array('status' => 'Success', 'data' => $new_array);
+}
+
+function hm_get_all_products(){
+	$response = get_results('select * from products where status = 1');
+
+	return array('status' => 'Success', 'data' => $response);
+}
+
+function hm_get_recent_products(){
+	$response = get_results('select * from products where status = 1 order by id desc limit 0, 5');
+
+	return array('status' => 'Success', 'data' => $response);
 }

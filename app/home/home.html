@@ -159,28 +159,16 @@
                 </div>                
                 <div class="row">
                     <div class="image-carousel owl-carousel owl-theme">
-                        <div class="item">
+                        <div ng-repeat="product in recent_products" class="item">
                             <div class="imagebox-wrap">
                                 <div class="imagebox">
-                                   <!-- <img ng-src="{{'admin/api/uploads/'+video.image}}" class="img-fluid"> -->
-                                   <img src="assets/images/Sun Spider 24T.png" class="img-fluid">
+                                   <img style="width: 100%;" src="{{'admin/api/uploads/'+product.thump_file}}" class="img-fluid">
                                 </div>
                                 <div class="imgtitle">
-                                    <h5>Sun Spider</h5>
+                                    <h5>{{product.title}}</h5>
                                 </div>
                             </div>
-                        </div>   
-                        <div class="item">
-                            <div class="imagebox-wrap">
-                                <div class="imagebox">
-                                   <!-- <img ng-src="{{'admin/api/uploads/'+video.image}}" class="img-fluid"> -->
-                                   <img src="assets/images/rockshock.png" class="img-fluid">
-                                </div>
-                                <div class="imgtitle">
-                                    <h5>Rock Shock</h5>
-                                </div>
-                            </div>
-                        </div>                                 
+                        </div>                                
                     </div>
                 </div>
     </div>
