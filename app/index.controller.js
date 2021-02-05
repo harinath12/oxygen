@@ -36,7 +36,7 @@ function indexController($rootScope, $scope, $state, ApiService, $window, $timeo
             
              
                 
-                $(".megamenu").on("click", function(e) {
+                /*$(".megamenu").on("click", function(e) {
                     e.stopPropagation();
                 });
            
@@ -45,7 +45,7 @@ function indexController($rootScope, $scope, $state, ApiService, $window, $timeo
             $('.navbar-toggler').trigger('click');
         }
         $('.tooltip').removeClass('show');
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({ scrollTop: 0 }, "slow");*/
     });
     
     $rootScope.$on('$stateChangeStart',
