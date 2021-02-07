@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="simple_page">
+  <section class="simple_page">
     <div class="container ">
       <div class="row">
         <div class="col-md-12" ng-bind-html="page.page_content | to_trusted">
@@ -21,7 +21,7 @@
         </div>        
       </div>
     </div>
-  </div>
+  </section>
 </main>
 <main ng-hide="pageid !== 'contact-us'">
   <div class="banner-area">
@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  <div class="only-form-pages p20">
+  <section class="only-form-pages">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -58,14 +58,7 @@
                   
                       <input required="" ng-model="contactForm.name" class="form-control" type="text" name="name" size="40" placeholder="Name">
                     </div>
-                    <div class="form-group">
-                      
-                      <select required ng-model="contactForm.user_type" class="form-control" name="user_type">
-                        <option value="" disabled selected>Select your Profile type</option >
-                        <option value="trader">Trader</option>
-                        <option value="sub-broker">Sub Broker</option>
-                      </select>
-                    </div>
+                    
                     <div class="form-group">
                       
                       <input required ng-model="contactForm.email" class="form-control" type="email" name="email" placeholder="Email">
@@ -96,5 +89,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </main>

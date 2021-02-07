@@ -10,7 +10,7 @@
         <div class="menu-top d-none d-md-block">
             <div class="waran" ><a data-toggle="modal" data-target="#warranty" class="cp">WARRANTY</a></div>
             
-                <ul class="top-social col-md-12 ">
+                <ul class="top-social">
                     <li><a href="https://www.facebook.com/" class="theme-color fa fa-facebook"></a></li>
                     <li><a href="https://twitter.com/" class="theme-color fa fa-twitter"></a></li>
                     <!--<li><a href="#" class="fa fa-instagram"></a></li> -->
@@ -36,7 +36,7 @@
                 <div class="dropdown-menu megamenu sm-menu border-top" aria-labelledby="dropdown01">
                     <div class="row">
                         <div ng-repeat="cat in CategoryAndProducts" class="col-sm-6 col-lg-4 border-right mb-4">
-                            <h6 ui-sref="category_products({id:cat.id})">{{cat.name}}</h6>
+                            <h6 ui-sref="category_products({id:cat.id})" class="cp">{{cat.name}}</h6>
                             <a ui-sref="brand_products({id:cat.id, id2:product.brand})" ng-repeat="product in cat.products" class="dropdown-item" href="#">{{product.brand}}</a>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
             </li>
             <!--=========-->
             <li class="nav-item"><a class="nav-link" ui-sref="blogs">Blogs</a></li>
-            <li class="nav-item"><a class="nav-link" ui-sref="pages({id:'contact-us'})">Reach Us</a></li>
+            <li class="nav-item"><a class="nav-link" ui-sref="contact">Reach Us</a></li>
             <li class="nav-item"><a class="nav-link" ui-sref="store">Store Locator</a></li>
    
         </ul>

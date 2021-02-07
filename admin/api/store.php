@@ -4,7 +4,7 @@ function hm_stores(){
 	return array('status' => 'Success', 'data' => $res);
 }
 
-function hm_get_stores(){
+function hm_get_store(){
 	$res = get_row("select * from stores where id = ".$_GET['id']);
 	return array('status' => 'Success', 'data' => $res);
 }

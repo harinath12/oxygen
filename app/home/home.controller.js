@@ -10,10 +10,10 @@ function homeController  ($rootScope, $scope, $state, ApiService, $window, $time
     
     ApiService.hm_get_recent_products().then(function(res){
         $scope.recent_products = res.data;
-    });
+    /*});
 
     ApiService.videos().then(function(res){
-        $scope.home_data = res.data;
+        $scope.home_data = res.data;*/
 
         $timeout(function(){
             AOS.init({});
@@ -135,7 +135,7 @@ function homeController  ($rootScope, $scope, $state, ApiService, $window, $time
 
 	$('#ensign-nivoslider-1').nivoSlider({
 
-        effect: 'boxRainReverse', // Specify sets like: 'sliceDownLeft sliceUp sliceUpLeft sliceUpDown sliceUpDownLeft fold fade random slideInRight slideInLeft boxRandom boxRain boxRainReverse boxRainGrow boxRainGrowReverse'
+        effect: 'sliceUpLeft', // Specify sets like: 'sliceDownLeft sliceUp sliceUpLeft sliceUpDown sliceUpDownLeft fold fade random slideInRight slideInLeft boxRandom boxRain boxRainReverse boxRainGrow boxRainGrowReverse'
         slices: 15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations

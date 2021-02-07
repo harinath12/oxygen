@@ -18,11 +18,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 why-oxy-bg ">
-                <img data-aos="fade-right" src="assets/images/welcome-cycle.png">                
+                <img data-aos="fade-right" ng-src="assets/images/welcome-cycle.png">                
             </div>
             <div class="col-md-5 why-content">
                 <h2>WELCOME TO <br><span class="theme-color fs46">OXYGEN</span></h2>
-                <img src="assets/images/line-1.png" class="img-fluid">
+                <img ng-src="assets/images/line-1.png" class="img-fluid">
                 <p>We Oxygen Cycles is a brand that Focuses on providing good quality bicycles at the  least price possible keeping in mind Safety as the important aspect. We truely support Make in India  believing  in providing  International quality together  with helping our economy and increasing employment.</p>
                 <a href="" class="btn btn-why-read"><span>Read More</span></a>                
             </div>            
@@ -31,7 +31,7 @@
 </div>
 <!-- Why Section -->
 <!-- Shop Category -->
-<div class="shop-category p30">
+<div class="shop-category pb-30">
     <div class="container">
         <div class="me-heading2">
             <h1 class="f-color">Shop <span class="theme-color">Categories</span></h1>
@@ -47,7 +47,7 @@
                                    </div>
                                 <div class="col-md-6 imagebox">
                                    <!-- <img ng-src="{{'admin/api/uploads/'+video.image}}" class="img-fluid"> -->
-                                   <img src="assets/images/cat1.png" class="img-fluid">
+                                   <img ng-src="assets/images/cat1.png" class="img-fluid">
                                 </div>
                             </div>  
                         </div> 
@@ -59,7 +59,7 @@
                                    </div>
                                 <div class="col-md-6 imagebox">
                                    <!-- <img ng-src="{{'admin/api/uploads/'+video.image}}" class="img-fluid"> -->
-                                   <img src="assets/images/cat2.png" class="img-fluid">
+                                   <img ng-src="assets/images/cat2.png" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                                    </div>
                                 <div class="col-md-6 imagebox">
                                    <!-- <img ng-src="{{'admin/api/uploads/'+video.image}}" class="img-fluid"> -->
-                                   <img src="assets/images/cat3.png" class="img-fluid">
+                                   <img ng-src="assets/images/cat3.png" class="img-fluid">
                                 </div>
                             </div>
                         </div>                                 
@@ -162,7 +162,7 @@
                         <div ng-repeat="product in recent_products" class="item">
                             <div class="imagebox-wrap">
                                 <div class="imagebox">
-                                   <img style="width: 100%;" src="{{'admin/api/uploads/'+product.thump_file}}" class="img-fluid">
+                                   <img style="width: 100%;" ng-src="{{'admin/api/uploads/'+product.thump_file}}" class="img-fluid">
                                 </div>
                                 <div class="imgtitle">
                                     <h5>{{product.title}}</h5>

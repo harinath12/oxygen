@@ -127,7 +127,7 @@ header{
 	width: 22%;
 	position: relative;
 	height: 66px;
-	background-color: #031A46;
+	background-color: #ccc;
 	padding: 12px 5px 5px;
 }
 .head-left img{
@@ -140,7 +140,7 @@ header{
 	position: relative;
 	padding-right: 30px;
 	height: 66px;
-	background-color:#031A46
+	background-color:#ccc;
 }
 .head-right a{
 	color:#fff;

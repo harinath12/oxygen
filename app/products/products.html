@@ -7,40 +7,16 @@
     	</div>
     </div>
 </div>
-        		<!--Banner End-->
-        		
-        		<!--Main Content Wrapper-->
+<!--Banner End-->
+
+<!--Main Content Wrapper-->
 <section class="product-content section-padding">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-6 col-md-6">
+        <div class="row mt-30">
+            <div class="col-xl-12 col-md-12">
                 <div class="shop-menu clearfix">
-                    <div class="">
-                        <ul>
-                            <li>       
-                                <select class="custom-select" ng-model="pageInfo.category" ng-change="pageInfo.filter.category = pageInfo.category ? pageInfo.category.id : '';pageInfo.filter.brand = '';">
-                                    <option value="">All Category</option>
-                                    <option ng-value="cat" ng-repeat="cat in CategoryAndProducts">{{cat.name}}</option>
-                                </select>
-                                <p>Category</p>                                  
-                            </li>
-                            <li ng-if="pageInfo.category && pageInfo.category.id">    
-                                                        
-                                <select class="custom-select" ng-model="pageInfo.filter.brand">
-                                    <option value="">All Brand</option>
-                                    <option ng-repeat="product in pageInfo.category.products">{{product.brand}}</option>
-                                </select>     
-                                <p>Brand</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-md-6">
-                <div class="shop-menu clearfix">
-                    <div class="right floatright">
-                        <ul>
-                            <li>                            
+                        <ul class="row">
+                            <li class="col-md-4">                            
                                 <select class="custom-select" ng-model="pageInfo.orderby">
                                     <option value="title">Name Asc</option>
                                     <option value="-title">Name Desc </option>
@@ -49,8 +25,23 @@
                                 </select>                                
                                 <p>Sort By</p>
                             </li>
+                            <li class="col-md-4">       
+                                <select class="custom-select" ng-model="pageInfo.category" ng-change="pageInfo.filter.category = pageInfo.category ? pageInfo.category.id : '';pageInfo.filter.brand = '';">
+                                    <option value="">All Category</option>
+                                    <option ng-value="cat" ng-repeat="cat in CategoryAndProducts">{{cat.name}}</option>
+                                </select>
+                                <p>Category</p>                                  
+                            </li>
+                            <li ng-if="pageInfo.category && pageInfo.category.id" class="col-md-4">    
+                                                        
+                                <select class="custom-select" ng-model="pageInfo.filter.brand">
+                                    <option value="">All Brand</option>
+                                    <option ng-repeat="product in pageInfo.category.products">{{product.brand}}</option>
+                                </select>     
+                                <p>Brand</p>
+                            </li>
+
                         </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -58,13 +49,13 @@
             <div class="col-md-4 col-sm-6 " ng-repeat="product in products | filter: pageInfo.filter | orderBy:pageInfo.orderby">
                 <div class="product-item margin40">
                     <div class="pro-img">
-                        <a ng-click="pageInfo.selected=product" data-toggle="modal" data-target="#quick-view" class="cp"><img style="width: 100%" src="admin/api/uploads/{{product.thump_file}}" alt="Product"></a>
+                        <a ng-click="pageInfo.selected=product" data-toggle="modal" data-target="#quick-view" class="cp"><img  class="img-fluid" ng-src="admin/api/uploads/{{product.thump_file}}" alt="Product"></a>
+
                         <div class="tag-n-s">
                             <span>New</span>
                         </div>
                         <div class="actions-btn">
-                            <ul class="clearfix">
-                                
+                            <ul class="clearfix">                                
                                 <li>
                                     <a ng-click="pageInfo.selected=product" data-toggle="modal" data-target="#quick-view" class="cp"><i class="fa fa-eye"></i></a>
                                 </li>
@@ -72,9 +63,8 @@
                         </div>
                     </div>
                     <div class="product-title">
-                        <a href="#"><h5>{{product.title}}</h5></a>
-                        
-                        <p><span>${{product.price}}</span><!-- <del>$170.00</del> --></p>
+                        <h3>{{product.title}}</h3>                        
+                        <p><span>Rs.{{product.price}}</span></p>
                     </div>
                 </div>
             </div>
@@ -93,7 +83,7 @@
                   </div>
                   <div class="modal-body">
                     <div class="quick-img">
-                         <img style="width: 100%" src="admin/api/uploads/{{pageInfo.selected.file}}" alt="">
+                         <img  ng-src="admin/api/uploads/{{pageInfo.selected.file}}" alt="" class="img-fluid">
                     </div> 
                   </div>
                 </div>

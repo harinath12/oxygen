@@ -1,6 +1,6 @@
 var hmapp = angular.module('app', 
     ['ui.router', 'ui.bootstrap', 'ckeditor'])
-.value('APIURL', 'http://localhost/Hari/oxygen/admin/api/?action=');
+.value('APIURL', 'http://localhost/cortex/oxygen/admin/api/?action=');
 /*.value('APIURL', '/oxygen/admin/api/?action=');*/
 
 hmapp.config(routes);
@@ -138,7 +138,7 @@ function routes($stateProvider, $urlRouterProvider) {
             auth: true,
             restricted:false,
             url: '/store/edit/:id',
-            templateUrl: 'app/store/form.html',
+            templateUrl: 'app/storelocator/form.html',
             controller: 'storeController'
         },
   

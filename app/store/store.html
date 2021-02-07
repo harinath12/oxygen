@@ -10,7 +10,7 @@
         		<!--Banner End-->
         		
         		<!--Main Content Wrapper-->
-<div class="main-content-wrap">
+<section class="main-content-wrap">
 	
 	<!--Content Start-->
 	<div class="main-content product-pg bg-1 mt-40 mb-40">
@@ -32,8 +32,8 @@
                 <div class="col-md-4 col-sm-6 text-center " ng-repeat="store in stores | filter:search">
                     <div class="store-box">
                         <h3 class="theme-color">{{store.name}}</h3>
-                        <p>{{store.address}}</p>
-                        <p>{{store.pincode}}</p>
+                        <p><b><i class="fa fa-map-marker-alt"></i> </b> {{store.address}}</p>
+                        <p><b>Pin : </b>{{store.pincode}}</p>
                     </div>
                     
                 </div>
@@ -42,6 +42,6 @@
 		        		
 	</div>
 	<!--Content End-->	        		
-</div>
+</section>
        		
 	

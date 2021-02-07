@@ -1,6 +1,6 @@
 <?php
 
-$array = array('config', 'common', 'blogs', 'upload', 'videogallery','pages','category','products','frontend','store','brand');
+$array = array('config', 'common', 'blogs', 'upload', 'videogallery','pages','category','products','frontend','store','brand','testimonial');
 
 
 foreach ($array as $key => $value) {
